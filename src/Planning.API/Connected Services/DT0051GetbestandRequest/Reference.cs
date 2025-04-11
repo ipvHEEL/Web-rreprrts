@@ -36,7 +36,7 @@ namespace DT0051GetbestandRequest
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://localhost/")]
     public partial class DT0051GETBESTANDRequest : object, System.ComponentModel.INotifyPropertyChanged
     {
-        
+        #region Fileds
         private decimal f551f1Field;
         
         private bool f551f1FieldSpecified;
@@ -250,9 +250,8 @@ namespace DT0051GetbestandRequest
         private string merpHandleField;
         
         private string merpTimeoutField;
-        
+        #endregion
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public decimal F551f1
         {
             get
@@ -282,7 +281,6 @@ namespace DT0051GetbestandRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public decimal F551f2
         {
             get
@@ -312,7 +310,6 @@ namespace DT0051GetbestandRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public decimal F800f1
         {
             get
@@ -342,7 +339,6 @@ namespace DT0051GetbestandRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public decimal F800f2
         {
             get
@@ -372,7 +368,6 @@ namespace DT0051GetbestandRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         public decimal F800f3
         {
             get
@@ -402,7 +397,6 @@ namespace DT0051GetbestandRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
         public decimal F800f4
         {
             get
@@ -432,7 +426,6 @@ namespace DT0051GetbestandRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
         public string F810f1
         {
             get
@@ -447,7 +440,6 @@ namespace DT0051GetbestandRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
         public string F814f1
         {
             get
@@ -462,7 +454,6 @@ namespace DT0051GetbestandRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
         public string F814f2
         {
             get
@@ -477,7 +468,6 @@ namespace DT0051GetbestandRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
         public string F816f1
         {
             get
@@ -492,7 +482,6 @@ namespace DT0051GetbestandRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
         public decimal L1f1
         {
             get
@@ -522,7 +511,6 @@ namespace DT0051GetbestandRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
         public decimal L1f2
         {
             get
@@ -552,7 +540,6 @@ namespace DT0051GetbestandRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
         public decimal L1f3
         {
             get
@@ -582,7 +569,6 @@ namespace DT0051GetbestandRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
         public decimal L1f4
         {
             get
@@ -612,7 +598,7 @@ namespace DT0051GetbestandRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("L1f4-QUAL", Order=14)]
+        [System.Xml.Serialization.XmlElementAttribute("L1f4-QUAL")]
         public decimal L1f4QUAL
         {
             get
@@ -642,7 +628,6 @@ namespace DT0051GetbestandRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
         public decimal L1f5
         {
             get
@@ -672,7 +657,6 @@ namespace DT0051GetbestandRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=16)]
         public decimal L1f6
         {
             get
@@ -702,7 +686,6 @@ namespace DT0051GetbestandRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=17)]
         public decimal L1f7
         {
             get
@@ -732,7 +715,6 @@ namespace DT0051GetbestandRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=18)]
         public decimal L1f8
         {
             get
@@ -762,7 +744,6 @@ namespace DT0051GetbestandRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=19)]
         public decimal L1f9
         {
             get
@@ -792,7 +773,6 @@ namespace DT0051GetbestandRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=20)]
         public decimal L1f10
         {
             get
@@ -822,7 +802,6 @@ namespace DT0051GetbestandRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=21)]
         public decimal L2f1
         {
             get
@@ -852,7 +831,6 @@ namespace DT0051GetbestandRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=22)]
         public decimal L2f2
         {
             get
@@ -882,7 +860,6 @@ namespace DT0051GetbestandRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=23)]
         public string L2f3
         {
             get
@@ -897,7 +874,6 @@ namespace DT0051GetbestandRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=24)]
         public decimal L2f4
         {
             get
@@ -927,7 +903,6 @@ namespace DT0051GetbestandRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=25)]
         public decimal L2f5
         {
             get
@@ -957,7 +932,6 @@ namespace DT0051GetbestandRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=26)]
         public string L2f6
         {
             get
@@ -972,7 +946,6 @@ namespace DT0051GetbestandRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=27)]
         public decimal L2f7
         {
             get
@@ -1002,7 +975,6 @@ namespace DT0051GetbestandRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=28)]
         public decimal L2f8
         {
             get
@@ -1032,7 +1004,6 @@ namespace DT0051GetbestandRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=29)]
         public decimal L2f9
         {
             get
@@ -1062,7 +1033,6 @@ namespace DT0051GetbestandRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=30)]
         public decimal L2f10
         {
             get
@@ -1092,7 +1062,6 @@ namespace DT0051GetbestandRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=31)]
         public string L2f11
         {
             get
@@ -1107,7 +1076,6 @@ namespace DT0051GetbestandRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=32)]
         public decimal L2f12
         {
             get
@@ -1137,7 +1105,6 @@ namespace DT0051GetbestandRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=33)]
         public decimal L3f1
         {
             get
@@ -1167,7 +1134,6 @@ namespace DT0051GetbestandRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=34)]
         public decimal L3f2
         {
             get
@@ -1197,7 +1163,6 @@ namespace DT0051GetbestandRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=35)]
         public decimal L3f3
         {
             get
@@ -1227,7 +1192,6 @@ namespace DT0051GetbestandRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=36)]
         public decimal L3f4
         {
             get
@@ -1257,7 +1221,6 @@ namespace DT0051GetbestandRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=37)]
         public decimal L3f5
         {
             get
@@ -1287,7 +1250,6 @@ namespace DT0051GetbestandRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=38)]
         public decimal L4f1
         {
             get
@@ -1317,7 +1279,6 @@ namespace DT0051GetbestandRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=39)]
         public decimal L4f2
         {
             get
@@ -1347,7 +1308,6 @@ namespace DT0051GetbestandRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=40)]
         public decimal L4f3
         {
             get
@@ -1377,7 +1337,6 @@ namespace DT0051GetbestandRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=41)]
         public decimal L4f4
         {
             get
@@ -1407,7 +1366,6 @@ namespace DT0051GetbestandRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=42)]
         public decimal L5f1
         {
             get
@@ -1437,7 +1395,6 @@ namespace DT0051GetbestandRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=43)]
         public decimal L5f2
         {
             get
@@ -1467,7 +1424,6 @@ namespace DT0051GetbestandRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=44)]
         public decimal L6f1
         {
             get
@@ -1497,7 +1453,6 @@ namespace DT0051GetbestandRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=45)]
         public decimal L6f2
         {
             get
@@ -1527,7 +1482,6 @@ namespace DT0051GetbestandRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=46)]
         public decimal L6f3
         {
             get
@@ -1557,7 +1511,7 @@ namespace DT0051GetbestandRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("L6f3-QUAL", Order=47)]
+        [System.Xml.Serialization.XmlElementAttribute("L6f3-QUAL")]
         public decimal L6f3QUAL
         {
             get
@@ -1587,7 +1541,6 @@ namespace DT0051GetbestandRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=48)]
         public decimal L6f4
         {
             get
@@ -1617,7 +1570,6 @@ namespace DT0051GetbestandRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=49)]
         public decimal L6f5
         {
             get
@@ -1647,7 +1599,7 @@ namespace DT0051GetbestandRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("L6f5-QUAL", Order=50)]
+        [System.Xml.Serialization.XmlElementAttribute("L6f5-QUAL")]
         public decimal L6f5QUAL
         {
             get
@@ -1677,7 +1629,6 @@ namespace DT0051GetbestandRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=51)]
         public decimal L6f6
         {
             get
@@ -1707,7 +1658,6 @@ namespace DT0051GetbestandRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=52)]
         public decimal L6f7
         {
             get
@@ -1737,7 +1687,6 @@ namespace DT0051GetbestandRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=53)]
         public decimal L6f8
         {
             get
@@ -1767,7 +1716,7 @@ namespace DT0051GetbestandRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("L6f8-QUAL", Order=54)]
+        [System.Xml.Serialization.XmlElementAttribute("L6f8-QUAL")]
         public decimal L6f8QUAL
         {
             get
@@ -1797,7 +1746,6 @@ namespace DT0051GetbestandRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=55)]
         public decimal L7f1
         {
             get
@@ -1827,7 +1775,6 @@ namespace DT0051GetbestandRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=56)]
         public string MerpHandle
         {
             get
@@ -1842,7 +1789,6 @@ namespace DT0051GetbestandRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=57)]
         public string MerpTimeout
         {
             get
@@ -1874,7 +1820,7 @@ namespace DT0051GetbestandRequest
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://localhost/")]
     public partial class DT0051GETBESTANDSysErrInfo : object, System.ComponentModel.INotifyPropertyChanged
     {
-        
+        #region Fields
         private decimal l1f1Field;
         
         private decimal l1f2Field;
@@ -1908,7 +1854,7 @@ namespace DT0051GetbestandRequest
         private string l2f11Field;
         
         private decimal l3f1Field;
-        
+        #endregion
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public decimal L1f1
@@ -2252,7 +2198,7 @@ namespace DT0051GetbestandRequest
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://localhost/")]
     public partial class DT0051GETBESTANDResponse : object, System.ComponentModel.INotifyPropertyChanged
     {
-        
+        #region Fields
         private decimal l1f1Field;
         
         private bool l1f1FieldSpecified;
@@ -2416,8 +2362,7 @@ namespace DT0051GetbestandRequest
         private decimal l7f5Field;
         
         private bool l7f5FieldSpecified;
-
-        [System.Xml.Serialization.XmlElementAttribute(Order = 20)]
+        #endregion
         public decimal L1f1
         {
             get
@@ -2447,7 +2392,6 @@ namespace DT0051GetbestandRequest
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
         public decimal L1f2
         {
             get
@@ -2477,7 +2421,7 @@ namespace DT0051GetbestandRequest
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("L1f2-QUAL", Order = 3)]
+        [System.Xml.Serialization.XmlElementAttribute("L1f2-QUAL")]
         public decimal L1f2QUAL
         {
             get
@@ -2507,7 +2451,6 @@ namespace DT0051GetbestandRequest
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order = 15)]
         public decimal L1f3
         {
             get
@@ -2537,7 +2480,6 @@ namespace DT0051GetbestandRequest
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order = 21)]
         public decimal L1f4
         {
             get
@@ -2567,7 +2509,6 @@ namespace DT0051GetbestandRequest
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order = 5)]
         public string L1f5
         {
             get
@@ -2582,7 +2523,6 @@ namespace DT0051GetbestandRequest
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order = 17)]
         public decimal L1f6
         {
             get
@@ -2612,7 +2552,6 @@ namespace DT0051GetbestandRequest
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order = 13)]
         public decimal L1f7
         {
             get
@@ -2642,7 +2581,6 @@ namespace DT0051GetbestandRequest
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order = 39)]
         public decimal L1f8
         {
             get
@@ -2672,7 +2610,6 @@ namespace DT0051GetbestandRequest
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order = 24)]
         public string L1f9
         {
             get
@@ -2687,7 +2624,6 @@ namespace DT0051GetbestandRequest
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order = 28)]
         public string L1f10
         {
             get
@@ -2702,7 +2638,6 @@ namespace DT0051GetbestandRequest
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order = 29)]
         public decimal L1f11
         {
             get
@@ -2732,7 +2667,6 @@ namespace DT0051GetbestandRequest
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order = 30)]
         public decimal L1f12
         {
             get
@@ -2762,7 +2696,6 @@ namespace DT0051GetbestandRequest
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order = 31)]
         public decimal L1f13
         {
             get
@@ -2792,7 +2725,6 @@ namespace DT0051GetbestandRequest
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order = 32)]
         public decimal L1f14
         {
             get
@@ -2822,7 +2754,6 @@ namespace DT0051GetbestandRequest
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order = 33)]
         public decimal L1f15
         {
             get
@@ -2852,7 +2783,6 @@ namespace DT0051GetbestandRequest
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order = 34)]
         public decimal L1f16
         {
             get
@@ -2882,7 +2812,6 @@ namespace DT0051GetbestandRequest
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order = 11)]
         public decimal L1f17
         {
             get
@@ -2912,7 +2841,6 @@ namespace DT0051GetbestandRequest
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order = 36)]
         public decimal L1f18
         {
             get
@@ -2942,7 +2870,6 @@ namespace DT0051GetbestandRequest
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order = 37)]
         public decimal L1f19
         {
             get
@@ -2972,7 +2899,6 @@ namespace DT0051GetbestandRequest
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order = 40)]
         public decimal L1f20
         {
             get
@@ -3002,7 +2928,6 @@ namespace DT0051GetbestandRequest
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order = 41)]
         public decimal L1f21
         {
             get
@@ -3032,7 +2957,6 @@ namespace DT0051GetbestandRequest
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order = 10)]
         public decimal L2f1
         {
             get
@@ -3062,7 +2986,6 @@ namespace DT0051GetbestandRequest
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order = 18)]
         public decimal L2f2
         {
             get
@@ -3092,7 +3015,6 @@ namespace DT0051GetbestandRequest
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order = 19)]
         public decimal L3f1
         {
             get
@@ -3122,7 +3044,6 @@ namespace DT0051GetbestandRequest
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order = 38)]
         public decimal L3f2
         {
             get
@@ -3152,7 +3073,7 @@ namespace DT0051GetbestandRequest
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order = 26)]
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
         public string L3f3
         {
             get
@@ -3167,7 +3088,6 @@ namespace DT0051GetbestandRequest
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order = 6)]
         public decimal L3f4
         {
             get
@@ -3197,7 +3117,6 @@ namespace DT0051GetbestandRequest
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order = 12)]
         public decimal L3f5
         {
             get
@@ -3227,7 +3146,6 @@ namespace DT0051GetbestandRequest
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order = 43)]
         public decimal L3f6
         {
             get
@@ -3257,7 +3175,6 @@ namespace DT0051GetbestandRequest
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
         public decimal L3f7
         {
             get
@@ -3287,7 +3204,6 @@ namespace DT0051GetbestandRequest
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
         public decimal L3f8
         {
             get
@@ -3317,7 +3233,6 @@ namespace DT0051GetbestandRequest
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order = 16)]
         public string L4f1
         {
             get
@@ -3332,7 +3247,6 @@ namespace DT0051GetbestandRequest
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order = 27)]
         public string L4f2
         {
             get
@@ -3347,7 +3261,6 @@ namespace DT0051GetbestandRequest
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order = 35)]
         public decimal L5f1
         {
             get
@@ -3377,7 +3290,6 @@ namespace DT0051GetbestandRequest
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order = 42)]
         public decimal L5f2
         {
             get
@@ -3407,7 +3319,6 @@ namespace DT0051GetbestandRequest
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order = 14)]
         public decimal L7f1
         {
             get
@@ -3437,7 +3348,6 @@ namespace DT0051GetbestandRequest
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order = 22)]
         public decimal L7f2
         {
             get
@@ -3467,7 +3377,7 @@ namespace DT0051GetbestandRequest
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("L7f2-QUAL", Order = 23)]
+        [System.Xml.Serialization.XmlElementAttribute("L7f2-QUAL")]
         public decimal L7f2QUAL
         {
             get
@@ -3497,7 +3407,6 @@ namespace DT0051GetbestandRequest
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order = 8)]
         public decimal L7f3
         {
             get
@@ -3527,7 +3436,7 @@ namespace DT0051GetbestandRequest
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("L7f3-QUAL", Order = 9)]
+        [System.Xml.Serialization.XmlElementAttribute("L7f3-QUAL")]
         public decimal L7f3QUAL
         {
             get
@@ -3557,7 +3466,7 @@ namespace DT0051GetbestandRequest
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order = 25)]
+        [System.Xml.Serialization.XmlElement("L7f4")]
         public decimal L7f4
         {
             get
@@ -3587,7 +3496,7 @@ namespace DT0051GetbestandRequest
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("L7f4-QUAL", Order = 26)]
+        [System.Xml.Serialization.XmlElementAttribute("L7f4-QUAL")]
         public decimal L7f4QUAL
         {
             get
@@ -3617,7 +3526,6 @@ namespace DT0051GetbestandRequest
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order = 7)]
         public decimal L7f5
         {
             get
@@ -3742,7 +3650,6 @@ namespace DT0051GetbestandRequest
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class SOADT0051GETBESTANDGetHandleRequest
     {
-        
         public SOADT0051GETBESTANDGetHandleRequest()
         {
         }
@@ -3777,7 +3684,6 @@ namespace DT0051GetbestandRequest
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     public partial class DT0051GETBESTANDRequestServiceSoapClient : System.ServiceModel.ClientBase<DT0051GetbestandRequest.DT0051GETBESTANDRequestServiceSoap>, DT0051GetbestandRequest.DT0051GETBESTANDRequestServiceSoap
     {
-        
         /// <summary>
         /// Implement this partial method to configure the service endpoint.
         /// </summary>
