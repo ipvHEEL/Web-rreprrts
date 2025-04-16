@@ -1,8 +1,114 @@
 ﻿@page "/planning"
-<PageTitle>Planning</PageTitle>
-<div class="container">
-    <h1>Planning</h1>
-</div>
-@code {
+@inject HttpClient Http
+@using System.ComponentModel.DataAnnotations
 
+<PageTitle>Planning</PageTitle>
+
+<h3>Список товаров</h3>
+
+@if (isLoading)
+{
+    <p>Загрузка данных...</p>
+}
+else if (errorMessage != null)
+{
+    <p class="text-danger">Ошибка: @errorMessage</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Описание</th>
+                <th>Host Item</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in apiResponse.Data)
+            {
+                <tr>
+                    <td>@product.Item</td>
+                    <td>@product.Description1</td>
+                    <td>@product.HostItem</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="pagination">
+        <button @onclick="PrevPage" disabled="@(apiResponse.PageIndex == 0)" class="btn btn-secondary">Назад</button>
+        <span>Страница @(apiResponse.PageIndex + 1)</span>
+        <button @onclick="NextPage" disabled="@(apiResponse.PageIndex >= apiResponse.TotalPages - 1)" class="btn btn-secondary">Вперед</button>
+    </div>
+}
+
+@code {
+    private ApiResponse apiResponse;
+    private bool isLoading = true;
+    private string errorMessage;
+    private int currentPage = 0;
+    private const int PageSize = 10;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadData(currentPage);
+    }
+
+    private async Task LoadData(int page)
+    {
+        try
+        {
+            isLoading = true;
+            var response = await Http.GetFromJsonAsync<ApiResponse>($"getitem?pageIndex={page}&pageSize={PageSize}");
+
+            if (response != null)
+            {
+                apiResponse = response;
+                apiResponse.TotalPages = (int)Math.Ceiling(response.Count / (double)PageSize);
+            }
+        }
+        catch (Exception ex)
+        {
+            errorMessage = ex.Message;
+        }
+        finally
+        {
+            isLoading = false;
+        }
+    }
+
+    private async Task NextPage()
+    {
+        if (apiResponse.PageIndex < apiResponse.TotalPages - 1)
+        {
+            currentPage++;
+            await LoadData(currentPage);
+        }
+    }
+
+    private async Task PrevPage()
+    {
+        if (apiResponse.PageIndex > 0)
+        {
+            currentPage--;
+            await LoadData(currentPage);
+        }
+    }
+
+    public class ApiResponse
+    {
+        public int PageIndex { get; set; }
+        public int PageSize { get; set; }
+        public int Count { get; set; }
+        public int TotalPages { get; set; }
+        public List<Product> Data { get; set; }
+    }
+
+    public class Product
+    {
+        public int Item { get; set; }
+        public string Description1 { get; set; }
+        public string HostItem { get; set; }
+    }
 }
