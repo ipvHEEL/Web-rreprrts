@@ -1,0 +1,41 @@
+@using WebApp.Components.ReportsComponent
+@using WebApp.Enums
+@inject NavigationManager NavigationManager
+@page "/reports"
+
+<PageTitle>Reports</PageTitle>
+<Header/>
+<TabsPanel />
+@* <TabsPanel ActiveTab="@ActiveTab" OnTabChanged="@OnTabChanged" />
+<div class="container">
+    <h1>Reports <a href="@urlFkReports">Click me!</a> aasdgwetweg</h1>
+    <button @onclick="OpenFkReports" href="@urlFkReports">Click me!</button>
+</div>
+<div class="tab-content">
+    @if (ActiveTab == TabsReports.Dashboard)
+    {
+        <DashboardComponent />
+    }
+    else if (ActiveTab == TabsReports.Traceability)
+    {
+        <TraceabilityComponent />
+    }
+</div> *@
+
+@code {
+    private readonly string urlFkReports = "http://fk.agrohold.ru/reports";
+    public void OpenFkReports()
+    {
+        NavigationManager.NavigateTo(urlFkReports);
+    }
+    @* private TabsReports ActiveTab = TabsReports.Dashboard;
+    private readonly Dictionary<string, TabsReports> TabNames = new()
+    {
+        { "Dashboard", TabsReports.Dashboard },
+        { "Traceability", TabsReports.Traceability },
+    };
+    private void OnTabChanged(TabsReports newTab)
+    {
+        ActiveTab = newTab;
+    } *@
+}

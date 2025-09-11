@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ExcelConfig>
+  <SheetName>ОХЛ</SheetName>
+  <Columns>
+    <Column Name="Factory" A1Notation="A" Index="1"/>
+    <Column Name="TempMode" A1Notation="B" Index="2"/>
+    <Column Name="Segment" A1Notation="C" Index="3"/>
+    <Column Name="SG" A1Notation="D" Index="4"/>
+    <Column Name="ItemId" A1Notation="E" Index="5"/>
+    <Column Name="ProductName" A1Notation="F" Index="6"/>
+  </Columns>
+  <FirstDateColumn A1Notation="G" Index="7"/>
+  <AllowedFactories>
+    <Factory>ФК</Factory>
+  </AllowedFactories>
+</ExcelConfig>

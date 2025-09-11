@@ -1,0 +1,45 @@
+﻿  @using WebApp.Enums
+  <!-- Tabs -->
+  <div class="px-4 py-3">
+    <div class="tabs-container mx-auto">
+      <ul class="nav nav-pills">
+        @foreach (var tab in Tabs)
+        {
+            <li class="nav-item">
+                <a class="nav-link @(tab.Value == ActiveTab ? "active" : "")"
+                  href="reports\#"
+                  @onclick="() => ChangeTab(tab.Value)">
+                    @tab.Key
+                </a>
+            </li>
+        }
+      </ul>
+    </div>
+  </div>
+    <!-- Отображение активного компонента -->
+    @if(ActiveTab == TabsReports.Dashboard)
+    {
+        <DashboardPanel />
+    }
+    else if(ActiveTab == TabsReports.Traceability)
+    {
+        <TraceabilityPanel />
+    }
+@code {
+  public Dictionary<string, TabsReports> Tabs { get; set; } = new ()
+    {
+      { "Dashboard", TabsReports.Dashboard },
+      { "Прослеживаемость", TabsReports.Traceability }
+    };
+  private TabsReports ActiveTab {get; set;}
+  public EventCallback<TabsReports> OnTabChanged { get; set; }
+
+  private async Task ChangeTab(TabsReports tab)
+  {
+      if (ActiveTab != tab)
+      {
+          ActiveTab = tab;
+          await OnTabChanged.InvokeAsync(tab);
+      }
+  }
+}

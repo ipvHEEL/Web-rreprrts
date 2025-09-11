@@ -1,0 +1,31 @@
+{
+  "ExtendedData": {
+    "inputs": [
+      "http://11-vm-csbjob:17/wsdl/dt0051/GETBESTAND/r"
+    ],
+    "collectionTypes": [
+      "System.Collections.Generic.Dictionary`2",
+      "System.Collections.Generic.List`1"
+    ],
+    "enableDataBinding": true,
+    "namespaceMappings": [
+      "*, DT0051GetbestandRequest"
+    ],
+    "references": [
+      "Microsoft.AspNetCore.Authentication.Negotiate, {Microsoft.AspNetCore.Authentication.Negotiate, 9.0.2}",
+      "Microsoft.AspNetCore.Connections.Abstractions, {Microsoft.AspNetCore.Connections.Abstractions, 9.0.2}",
+      "Microsoft.AspNetCore.OpenApi, {Microsoft.AspNetCore.OpenApi, 9.0.2}",
+      "Microsoft.Extensions.Caching.Abstractions, {Microsoft.Extensions.Caching.Abstractions, 9.0.2}",
+      "Microsoft.Extensions.Caching.Memory, {Microsoft.Extensions.Caching.Memory, 9.0.2}",
+      "Microsoft.Extensions.DependencyInjection.Abstractions, {Microsoft.Extensions.DependencyInjection.Abstractions, 9.0.2}",
+      "Microsoft.Extensions.Features, {Microsoft.Extensions.Features, 9.0.2}",
+      "Microsoft.Extensions.Logging.Abstractions, {Microsoft.Extensions.Logging.Abstractions, 9.0.2}",
+      "Microsoft.Extensions.Options, {Microsoft.Extensions.Options, 9.0.2}",
+      "Microsoft.Extensions.Primitives, {Microsoft.Extensions.Primitives, 9.0.2}",
+      "Microsoft.OpenApi, {Microsoft.OpenApi, 1.6.17}",
+      "System.DirectoryServices.Protocols, {System.DirectoryServices.Protocols, 9.0.2}"
+    ],
+    "targetFramework": "net9.0",
+    "typeReuseMode": "All"
+  }
+}

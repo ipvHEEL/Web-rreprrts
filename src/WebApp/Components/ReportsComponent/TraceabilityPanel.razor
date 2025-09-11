@@ -1,0 +1,174 @@
+﻿@using Reports.Domain.ProductionOrder;
+@using WebApp.Services;
+@inject ReportsApiService ReportsApiServ
+
+<h3>TraceabilityPanel</h3>
+<h3>🌿 Овощное дерево по уровням</h3>
+
+<h3 class="mb-3">🌿 Овощное дерево (расширенное)</h3>
+
+<div>
+    <InputDate @bind-Value="SelectedDate"></InputDate>
+    <button class="btn btn-primary mt-2" @onclick="LoadOrders">Загрузить заказы</button>
+    @if (ProductionOrders is not null)
+    {
+        <h5 class="mt-4">Найдено заказов: @ProductionOrders.Count()</h5>
+        <ul class="list-group">
+            @foreach (var order in ProductionOrders)
+            {
+                <li class="list-group-item">
+                    Заказ №: @order.ProductionOrder
+                </li>
+            }
+        </ul>
+    }
+</div>
+<!-- Поиск -->
+<div class="input-group mb-3">
+    <span class="input-group-text">🔍</span>
+    <input class="form-control" @bind="searchTerm" placeholder="Поиск по имени..." />
+</div>
+
+<!-- Переключатель отображения -->
+<div class="mb-3">
+    <label>
+        <input type="checkbox" @bind="useAccordion" />
+        Использовать <strong>accordion</strong>
+    </label>
+</div>
+
+<!-- Пагинация -->
+<div class="mb-3">
+    <label>ID страницы:</label>
+    <select class="form-select w-auto d-inline-block ms-2" @bind="currentPageId">
+        @foreach (var id in AvailableIds)
+        {
+            <option value="@id">@id</option>
+        }
+    </select>
+</div>
+
+<!-- Дерево -->
+@if (FilteredGroups.Any())
+{
+    <div class="accordion" id="vegAccordion">
+        @foreach (var group in FilteredGroups)
+        {
+            var panelId = $"panel-{group.Key}";
+            var ordered = group.OrderBy(v => v.OrdinalNumber).ToList();
+
+            if (useAccordion)
+            {
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="@($"heading-{group.Key}")">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#@panelId" aria-expanded="false" aria-controls="@panelId">
+                            🥕 @group.First().Name (ID: @group.Key)
+                        </button>
+                    </h2>
+                    <div id="@panelId" class="accordion-collapse collapse" aria-labelledby="@($"heading-{group.Key}")"
+                    data-bs-parent="#vegAccordion">
+                        <div class="accordion-body">
+                            <ul>@RenderVegetableNode(ordered, 0)</ul>
+                        </div>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="border p-2 mb-2 rounded shadow-sm">
+                    <button class="btn btn-sm btn-link" @onclick="() => Toggle(group.Key)">
+                        <i class="bi @(collapsedIds.Contains(group.Key) ? "bi-chevron-right" : "bi-chevron-down")"></i>
+                        🥦 @group.First().Name (ID: @group.Key)
+                    </button>
+                    @if (!collapsedIds.Contains(group.Key))
+                    {
+                        <ul class="ms-4">@RenderVegetableNode(ordered, 0)</ul>
+                    }
+                </div>
+            }
+        }
+    </div>
+}
+else
+{
+    <div class="alert alert-warning">Нет результатов</div>
+}
+@code {
+    private DateOnly SelectedDate = DateOnly.FromDateTime(DateTime.Today);
+    private List<ProductionOrderNumberDto> ProductionOrders;
+    private async Task LoadOrders()
+    {
+        ProductionOrders = await ReportsApiServ.GetOrderNumber(SelectedDate);
+    }
+
+    public List<Vegetables> stepOne = new List<Vegetables>()
+        {
+            new Vegetables {Id = 1,Name = "potato",OrdinalNumber = 1},
+            new Vegetables {Id = 1,Name = "potato",OrdinalNumber = 2},
+            new Vegetables {Id = 1,Name = "potato",OrdinalNumber = 3},
+            new Vegetables {Id = 2,Name = "corn",OrdinalNumber = 1},
+            new Vegetables {Id = 2,Name = "corn",OrdinalNumber = 2},
+            new Vegetables {Id = 2,Name = "corn",OrdinalNumber = 3},
+            new Vegetables {Id = 3,Name = "pumpkin",OrdinalNumber = 1},
+            new Vegetables {Id = 3,Name = "pumpkin",OrdinalNumber = 2},
+            new Vegetables {Id = 3,Name = "pumpkin",OrdinalNumber = 3},
+            new Vegetables {Id = 3,Name = "pumpkin",OrdinalNumber = 4},
+            new Vegetables {Id = 4,Name = "cucumber",OrdinalNumber = 1},
+            new Vegetables {Id = 4,Name = "cucumber",OrdinalNumber = 2},
+            new Vegetables {Id = 4,Name = "cucumber",OrdinalNumber = 3},
+            new Vegetables {Id = 4,Name = "cucumber",OrdinalNumber = 4},
+            new Vegetables {Id = 4,Name = "cucumber",OrdinalNumber = 5},
+            new Vegetables {Id = 5,Name = "tomato",OrdinalNumber = 1},
+            new Vegetables {Id = 5,Name = "tomato",OrdinalNumber = 2},
+            new Vegetables {Id = 5,Name = "tomato",OrdinalNumber = 3},
+            new Vegetables {Id = 5,Name = "tomato",OrdinalNumber = 4},
+            new Vegetables {Id = 5,Name = "tomato",OrdinalNumber = 5},
+            new Vegetables {Id = 5,Name = "tomato",OrdinalNumber = 6}
+        };
+    public class Vegetables
+    {
+        public int Id {get; set;}
+        public string Name {get; set;} = "";
+        public int OrdinalNumber { get; set;}
+    }
+    private bool useAccordion = false;
+    private string searchTerm = "";
+    private int currentPageId = 1;
+    private HashSet<int> collapsedIds = new();
+
+    private IEnumerable<IGrouping<int, Vegetables>> FilteredGroups =>
+        stepOne
+            .Where(v => v.Id == currentPageId && (string.IsNullOrWhiteSpace(searchTerm) || v.Name.Contains(searchTerm, StringComparison.OrdinalIgnoreCase)))
+            .GroupBy(v => v.Id);
+
+    private IEnumerable<int> AvailableIds => stepOne.Select(v => v.Id).Distinct().OrderBy(id => id);
+
+    private void Toggle(int id)
+    {
+        if (collapsedIds.Contains(id))
+            collapsedIds.Remove(id);
+        else
+            collapsedIds.Add(id);
+    }
+    RenderFragment RenderVegetableNode(List<Vegetables> list, int index)
+    {
+        if (index >= list.Count)
+            return builder => { };
+
+        var veg = list[index];
+        return builder =>
+        {
+            int seq = 0;
+            builder.OpenElement(seq++, "li");
+            builder.AddContent(seq++, $"{veg.Name} (OrdinalNumber = {veg.OrdinalNumber})");
+            if (index + 1 < list.Count)
+            {
+                builder.OpenElement(seq++, "ul");
+                builder.AddContent(seq++, RenderVegetableNode(list, index + 1));
+                builder.CloseElement();
+            }
+            builder.CloseElement();
+        };
+    }
+}

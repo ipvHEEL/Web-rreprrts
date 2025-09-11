@@ -1,0 +1,9 @@
+@Planning.API_HostAddress = http://localhost:5093
+
+GET {{Planning.API_HostAddress}}/getitemstock
+Accept: application/json
+###
+
+GET {{Planning.API_HostAddress}}/getitem
+Accept: application/json
+###

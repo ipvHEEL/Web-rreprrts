@@ -1,0 +1,18 @@
+﻿<h1>TabLayout</h1>
+<div>
+    <ul>
+        @testText
+    </ul>
+    <ul>
+        @TestTextProp
+    </ul>
+</div>
+
+@code {
+    private string testText = "String test that watch result";
+    public string TestTextProp 
+    {
+        get { return testText; }
+        set { testText = value; }
+    }
+}
